@@ -13,10 +13,35 @@ const persistence = num => {
     }
     return num;
 }
-
 //console.log(persistence(281));
 
+//Repeat a given string str (first argument) for num times (second argument). Return an empty string if num is not a positive number.
+function repeatStringNumTimes(str, num) {
+  let acc = str;
+  if (num < 0) {
+    return "";
+  } else {
+  for (let i=1; i<num; i++) {
+    acc += str;
+  }
+  return acc;
+  }
+};
+//console.log(repeatStringNumTimes("abc", 3));
+repeatStringNumTimes("abc", 3);
 
+//Return the length of the longest word in the provided sentence.
+function findLongestWordLength(str) {
+  let words = str.split(" ");
+  let maxLength = 0;
+  for (let i=0; i<words.length; i++) {
+    if (words[i].length > maxLength) {
+      maxLength = words[i].length;
+    } 
+  }
+  return maxLength;
+}
+findLongestWordLength("The quick brown fox jumped over the lazy dog"); //6
 
 function splitStrings(str){
     let pairArray = [];
